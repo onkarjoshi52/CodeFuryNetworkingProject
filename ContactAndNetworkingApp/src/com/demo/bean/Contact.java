@@ -5,17 +5,17 @@ import java.util.Date;
 
 public class Contact {
 	
-	private String cemail;
-	private String cfullName;   
-	private String cmob;
-	private String cgender;
-	private Date cbdate;
-	private String caddress;
-	private String ccity;
-	private String cstate;
-	private String ccountry;
-	private String ccompany;
-	private BufferedImage cimage;
+	private String cEmail;
+	private String cFullName;   
+	private String cMob;
+	private String cGender;
+	private Date cbDate;
+	private String cAddress;
+	private String cCity;
+	private String cState;
+	private String cCountry;
+	private String cCompany;
+	private BufferedImage cImage;
 	
 	//Default Constructor
 	public Contact() {
@@ -26,93 +26,93 @@ public class Contact {
 	public Contact(String cemail, String cfullName, String cmob, String cgender, Date cbdate, String caddress,
 			String ccity, String cstate, String ccountry, String ccompany, BufferedImage cimage) {
 		super();
-		this.cemail = cemail;
-		this.cfullName = cfullName;
-		this.cmob = cmob;
-		this.cgender = cgender;
-		this.cbdate = cbdate;
-		this.caddress = caddress;
-		this.ccity = ccity;
-		this.cstate = cstate;
-		this.ccountry = ccountry;
-		this.ccompany = ccompany;
-		this.cimage = cimage;
+		this.cEmail = cemail;
+		this.cFullName = cfullName;
+		this.cMob = cmob;
+		this.cGender = cgender;
+		this.cbDate = cbdate;
+		this.cAddress = caddress;
+		this.cCity = ccity;
+		this.cState = cstate;
+		this.cCountry = ccountry;
+		this.cCompany = ccompany;
+		this.cImage = cimage;
 	}
 	
 	//Overrided toString method
 	@Override
 	public String toString() {
-		return "Contact [cemail=" + cemail + ", cfullName=" + cfullName + ", cmob=" + cmob + ", cgender=" + cgender
-				+ ", cbdate=" + cbdate + ", caddress=" + caddress + ", ccity=" + ccity + ", cstate=" + cstate
-				+ ", ccountry=" + ccountry + ", ccompany=" + ccompany + ", cimage=" + cimage + "]";
+		return "Contact [cemail=" + cEmail + ", cfullName=" + cFullName + ", cmob=" + cMob + ", cgender=" + cGender
+				+ ", cbdate=" + cbDate + ", caddress=" + cAddress + ", ccity=" + cCity + ", cstate=" + cState
+				+ ", ccountry=" + cCountry + ", ccompany=" + cCompany + ", cimage=" + cImage + "]";
 	}
 	
 	//Getters and setters
 	public String getCemail() {
-		return cemail;
+		return cEmail;
 	}
 	public void setCemail(String cemail) {
-		this.cemail = cemail;
+		this.cEmail = cemail;
 	}
 	public String getCfullName() {
-		return cfullName;
+		return cFullName;
 	}
 	public void setCfullName(String cfullName) {
-		this.cfullName = cfullName;
+		this.cFullName = cfullName;
 	}
 	public String getCmob() {
-		return cmob;
+		return cMob;
 	}
 	public void setCmob(String cmob) {
-		this.cmob = cmob;
+		this.cMob = cmob;
 	}
 	public String getCgender() {
-		return cgender;
+		return cGender;
 	}
 	public void setCgender(String cgender) {
-		this.cgender = cgender;
+		this.cGender = cgender;
 	}
 	public Date getCbdate() {
-		return cbdate;
+		return cbDate;
 	}
 	public void setCbdate(Date cbdate) {
-		this.cbdate = cbdate;
+		this.cbDate = cbdate;
 	}
 	public String getCaddress() {
-		return caddress;
+		return cAddress;
 	}
 	public void setCaddress(String caddress) {
-		this.caddress = caddress;
+		this.cAddress = caddress;
 	}
 	public String getCcity() {
-		return ccity;
+		return cCity;
 	}
 	public void setCcity(String ccity) {
-		this.ccity = ccity;
+		this.cCity = ccity;
 	}
 	public String getCstate() {
-		return cstate;
+		return cState;
 	}
 	public void setCstate(String cstate) {
-		this.cstate = cstate;
+		this.cState = cstate;
 	}
 	public String getCcountry() {
-		return ccountry;
+		return cCountry;
 	}
 	public void setCcountry(String ccountry) {
-		this.ccountry = ccountry;
+		this.cCountry = ccountry;
 	}
 	public String getCcompany() {
-		return ccompany;
+		return cCompany;
 	}
 	public void setCcompany(String ccompany) {
-		this.ccompany = ccompany;
+		this.cCompany = ccompany;
 	}
 	public BufferedImage getCimage() {
-		return cimage;
+		return cImage;
 	}
 	public void setCimage(BufferedImage cimage) {
-		this.cimage = cimage;
+		this.cImage = cimage;
 	}
 	
 }
