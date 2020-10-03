@@ -3,49 +3,49 @@ package com.demo.bean;
 import java.awt.image.BufferedImage;
 import java.util.Date;
 
-public class User {
+public class UserDetails {
 	
-	private String uemail;
-	private String ufullName;   //User full name
-	private String uname;       //User handle
-	private String upass;
-	private String umob;
-	private String ugender;
-	private Date ubdate;
-	private String uaddress;
-	private String ucity;
-	private String ustate;
-	private String ucountry;
-	private String ucompany;
-	private BufferedImage uimage;
-	private int uid;
+	private String uEmail;
+	private String uFullName;   //User full name
+	private String uName;       //User handle
+	private String uPass;
+	private String uMob;
+	private String uGender;
+	private Date ubDate;
+	private String uAddress;
+	private String uCity;
+	private String uState;
+	private String uCountry;
+	private String uCompany;
+	private BufferedImage uImage;
+	private int uId;
 	private String supportQn;
 	private String supportAns;
 	
 	//Default Constructor
-	public User() {
+	public UserDetails() {
 		super();
 	}
 
 	//Parameterized constructor
-	public User(String uemail, String ufullName, String uname, String upass, String umob, String ugender, Date ubdate,
+	public UserDetails(String uemail, String ufullName, String uname, String upass, String umob, String ugender, Date ubdate,
 			String uaddress, String ucity, String ustate, String ucountry, String ucompany, BufferedImage uimage,
 			int uid, String supportQn, String supportAns) {
 		super();
-		this.uemail = uemail;
-		this.ufullName = ufullName;
-		this.uname = uname;
-		this.upass = upass;
-		this.umob = umob;
-		this.ugender = ugender;
-		this.ubdate = ubdate;
-		this.uaddress = uaddress;
-		this.ucity = ucity;
-		this.ustate = ustate;
-		this.ucountry = ucountry;
-		this.ucompany = ucompany;
-		this.uimage = uimage;
-		this.uid = uid;
+		this.uEmail = uemail;
+		this.uFullName = ufullName;
+		this.uName = uname;
+		this.uPass = upass;
+		this.uMob = umob;
+		this.uGender = ugender;
+		this.ubDate = ubdate;
+		this.uAddress = uaddress;
+		this.uCity = ucity;
+		this.uState = ustate;
+		this.uCountry = ucountry;
+		this.uCompany = ucompany;
+		this.uImage = uimage;
+		this.uId = uid;
 		this.supportQn = supportQn;
 		this.supportAns = supportAns;
 	}
@@ -53,124 +53,124 @@ public class User {
 	//Tostring method
 	@Override
 	public String toString() {
-		return "User [uemail=" + uemail + ", ufullName=" + ufullName + ", uname=" + uname + ", upass=" + upass
-				+ ", umob=" + umob + ", ugender=" + ugender + ", ubdate=" + ubdate + ", uaddress=" + uaddress
-				+ ", ucity=" + ucity + ", ustate=" + ustate + ", ucountry=" + ucountry + ", ucompany=" + ucompany
-				+ ", uimage=" + uimage + ", uid=" + uid + ", supportQn=" + supportQn + ", supportAns=" + supportAns
+		return "User [uemail=" + uEmail + ", ufullName=" + uFullName + ", uname=" + uName + ", upass=" + uPass
+				+ ", umob=" + uMob + ", ugender=" + uGender + ", ubdate=" + ubDate + ", uaddress=" + uAddress
+				+ ", ucity=" + uCity + ", ustate=" + uState + ", ucountry=" + uCountry + ", ucompany=" + uCompany
+				+ ", uimage=" + uImage + ", uid=" + uId + ", supportQn=" + supportQn + ", supportAns=" + supportAns
 				+ "]";
 	}
 
 	//Getters and setters
 	public String getUemail() {
-		return uemail;
+		return uEmail;
 	}
 
 	public void setUemail(String uemail) {
-		this.uemail = uemail;
+		this.uEmail = uemail;
 	}
 
 	public String getUfullName() {
-		return ufullName;
+		return uFullName;
 	}
 
 	public void setUfullName(String ufullName) {
-		this.ufullName = ufullName;
+		this.uFullName = ufullName;
 	}
 
 	public String getUname() {
-		return uname;
+		return uName;
 	}
 
 	public void setUname(String uname) {
-		this.uname = uname;
+		this.uName = uname;
 	}
 
 	public String getUpass() {
-		return upass;
+		return uPass;
 	}
 
 	public void setUpass(String upass) {
-		this.upass = upass;
+		this.uPass = upass;
 	}
 
 	public String getUmob() {
-		return umob;
+		return uMob;
 	}
 
 	public void setUmob(String umob) {
-		this.umob = umob;
+		this.uMob = umob;
 	}
 
 	public String getUgender() {
-		return ugender;
+		return uGender;
 	}
 
 	public void setUgender(String ugender) {
-		this.ugender = ugender;
+		this.uGender = ugender;
 	}
 
 	public Date getUbdate() {
-		return ubdate;
+		return ubDate;
 	}
 
 	public void setUbdate(Date ubdate) {
-		this.ubdate = ubdate;
+		this.ubDate = ubdate;
 	}
 
 	public String getUaddress() {
-		return uaddress;
+		return uAddress;
 	}
 
 	public void setUaddress(String uaddress) {
-		this.uaddress = uaddress;
+		this.uAddress = uaddress;
 	}
 
 	public String getUcity() {
-		return ucity;
+		return uCity;
 	}
 
 	public void setUcity(String ucity) {
-		this.ucity = ucity;
+		this.uCity = ucity;
 	}
 
 	public String getUstate() {
-		return ustate;
+		return uState;
 	}
 
 	public void setUstate(String ustate) {
-		this.ustate = ustate;
+		this.uState = ustate;
 	}
 
 	public String getUcountry() {
-		return ucountry;
+		return uCountry;
 	}
 
 	public void setUcountry(String ucountry) {
-		this.ucountry = ucountry;
+		this.uCountry = ucountry;
 	}
 
 	public String getUcompany() {
-		return ucompany;
+		return uCompany;
 	}
 
 	public void setUcompany(String ucompany) {
-		this.ucompany = ucompany;
+		this.uCompany = ucompany;
 	}
 
 	public BufferedImage getUimage() {
-		return uimage;
+		return uImage;
 	}
 
 	public void setUimage(BufferedImage uimage) {
-		this.uimage = uimage;
+		this.uImage = uimage;
 	}
 
 	public int getUid() {
-		return uid;
+		return uId;
 	}
 
 	public void setUid(int uid) {
-		this.uid = uid;
+		this.uId = uid;
 	}
 
 	public String getSupportQn() {
