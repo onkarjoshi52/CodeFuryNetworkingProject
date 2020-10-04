@@ -26,6 +26,7 @@ import com.demo.service.*;
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	//static SimpleDateFormat sdf;
+	static int uid=0;
 	public void init() {
 		//sdf=new SimpleDateFormat("yyyy-MM-dd");
 	}
@@ -58,9 +59,17 @@ public class RegisterServlet extends HttpServlet {
 		RegisterService registerService=new RegisterServiceImpl();
 
 		Date dt=Date.valueOf(dob);
-		
+		int id = 0;
+		UserDetails userD=registerService.checkUiD(uid);
+		while(userD!=null) {
+			id=userD.getUid();
+			//id=id+1;
+			uid++;
+			userD=registerService.checkUiD(uid);
+		}
+		id=id+1;
 			
-			UserDetails userDetails=new UserDetails(email,name,username,pass,mob,gender,dt,address,city,state,country,company,bImage,supportQ,supportA);
+			UserDetails userDetails=new UserDetails(email,name,username,pass,mob,gender,dt,address,city,state,country,company,bImage,id,supportQ,supportA);
 			registerService.saveDetails(userDetails);
 			request.setAttribute("User Details", userDetails);
 			RequestDispatcher rd=request.getRequestDispatcher("display.jsp");

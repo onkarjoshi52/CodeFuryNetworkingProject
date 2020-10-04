@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% UserDetails u=(UserDetails)request.getAttribute("img");
+	<% UserDetails u=(UserDetails)request.getAttribute("User Details");
 	%>
 	<h3>City:</h3> <%=u.getUimage() %>
 </body>

@@ -5,10 +5,6 @@ import java.awt.image.BufferedImage;
 import java.sql.Date;
 
 public class UserDetails {
-	static {
-		count=0;
-	}
-	public static Integer count;
 	
 	private String uEmail;
 	private String uFullName;   //User full name
@@ -32,13 +28,17 @@ public class UserDetails {
 	//Default Constructor
 	public UserDetails() {
 		super();
-		this.uId = count+1;
 	}
 
-	
-	
-	public UserDetails(String uName, String uPass) {
+	public UserDetails(int uid) {
 		super();
+		this.uId=uid;
+	}
+	
+	public UserDetails(String uemail,String uName,String ufullName, String uPass) {
+		super();
+		this.uEmail = uemail;
+		this.uFullName = ufullName;
 		this.uName = uName;
 		this.uPass = uPass;
 	}
@@ -47,7 +47,7 @@ public class UserDetails {
 
 	//Parameterized constructor
 	public UserDetails(String uemail, String ufullName, String uname, String upass, String umob, String ugender, Date ubdate,
-			String uaddress, String ucity, String ustate, String ucountry, String ucompany, BufferedImage uimage,
+			String uaddress, String ucity, String ustate, String ucountry, String ucompany, BufferedImage uimage,int uid,
 			 String supportQn, String supportAns) {
 		super();
 		this.uEmail = uemail;
@@ -63,7 +63,7 @@ public class UserDetails {
 		this.uCountry = ucountry;
 		this.uCompany = ucompany;
 		this.uImage = uimage;
-		this.uId = count+1;
+		this.uId=uid;
 		this.supportQn = supportQn;
 		this.supportAns = supportAns;
 	}

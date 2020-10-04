@@ -30,12 +30,13 @@ public class MyLoginServlet extends HttpServlet {
 		String uname=request.getParameter("uname");
 		String pass=request.getParameter("pass");
 		LoginService loginService=new LoginServiceImpl();
+		
 		UserDetails user=loginService.validateUser(uname,pass);
 		if(user!=null){
 			HttpSession session=request.getSession();
 			session.setAttribute("uname", uname);
 			session.setAttribute("pass", pass);
-			session.setAttribute("role","user" );
+			//session.setAttribute("role","user" );
 		    if(session.isNew()) {
 		    	session.setAttribute("uname", uname);
 		    }			

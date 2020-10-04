@@ -10,11 +10,12 @@ import com.demo.bean.UserDetails;
 
 public class LoginDaoImpl implements LoginDao{
 	static Connection conn;
-	static PreparedStatement pgetbyname;
+	static PreparedStatement ugetbyname,ugetid;
 	static {
 		conn=DBUtil.getMyConnection();
 		try {
-			pgetbyname=conn.prepareStatement("select * from userdetails where uname=? and upass=?");
+			ugetbyname=conn.prepareStatement("select * from userdetails where uname=? and upass=?");
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -23,11 +24,12 @@ public class LoginDaoImpl implements LoginDao{
 	@Override
 	public UserDetails authenticateUser(String uname, String pass) {
 		try {
-			pgetbyname.setString(1, uname);
-			pgetbyname.setString(2, pass);
-			ResultSet rs=pgetbyname.executeQuery();
+			ugetbyname.setString(1, uname);
+			ugetbyname.setString(2, pass);
+			ResultSet rs=ugetbyname.executeQuery();
 			if(rs.next()) {
-				UserDetails u=new UserDetails(rs.getString(1),rs.getString(2));
+				UserDetails u=new UserDetails(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4));
+				//System.out.println(u.getUname());
 				if(u.getUname().equals(uname) && u.getUpass().equals(pass)) {
 					return u;
 			    }
@@ -40,5 +42,6 @@ public class LoginDaoImpl implements LoginDao{
 		
 		return null;
 	}
-
+	
+	
 }

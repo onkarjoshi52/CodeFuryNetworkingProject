@@ -16,5 +16,9 @@ public class RegisterServiceImpl implements RegisterService {
 		 
 		
 	}
+	@Override
+	public UserDetails checkUiD(int uid) {
+		return registerDao.checkUID(uid);
+	}
 
 }

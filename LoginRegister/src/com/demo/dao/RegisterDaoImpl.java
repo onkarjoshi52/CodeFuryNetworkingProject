@@ -20,12 +20,12 @@ import com.demo.bean.UserDetails;
 public class RegisterDaoImpl implements RegisterDao {
 
 	static Connection conn;
-	static PreparedStatement uregister,state;
+	static PreparedStatement uregister,ugetid;
 	static {
 		conn=DBUtil.getMyConnection();
 		try {
 			uregister=conn.prepareStatement("insert into userdetails values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			state=conn.prepareStatement("SELECT * FROM userdetails WHERE uname = ?");
+			ugetid=conn.prepareStatement("select uid from userdetails where uid=?");
 		}catch(SQLException e) {
 			
 		}
@@ -48,7 +48,25 @@ public class RegisterDaoImpl implements RegisterDao {
 		return null;
 	}
 	
+	public UserDetails checkUID(int uid) {
+			ResultSet rs;
+			try {
+				ugetid.setInt(1, uid);
+				rs = ugetid.executeQuery();
+				if(rs.next()) {
+					UserDetails u=new UserDetails(rs.getInt(1));
+					return u;
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return null;
+		
+	}
 	
+
 	
 	
 	
