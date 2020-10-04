@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<script>
+function validatepass(){
+	
+	
+	   var pass=document.getElementById("password").value;
+	   var cpass=document.getElementById("cpassword").value;
+	 
+	   if(pass==cpass){
+		   document.getElementById("errpass").innerHTML="";
+		   return true;
+	   }
+	   else{
+		   document.getElementById("errpass").innerHTML="password and confirm password does not match";
+		   return false;
+	   }
+}
+
+
+
+</script>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<form class="login-form" action="register" method="post" onsubmit="return validatepass()">
+  <p class="login-text">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-lock fa-stack-1x"></i>
+    </span>
+  </p>
+  <p class="text-headr" >Register</p>
+  <input type="text" class="login-username" name="fullname" id="name"   autofocus required="true" placeholder="FullName"/>
+  <input type="email" class="login-username" name="email" id="mail"  autofocus required="true" placeholder="Email" />
+  <input type="text" class="login-username" name="mob" id="mobile"  autofocus pattern="[0-9]{10}"required="true" placeholder="Phone No" />
+  <label class="text-headr" >Gender</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" id="m" value="male" > <label class="text-headr" >Male</label>&nbsp;&nbsp;
+  <input type="radio" name="gender" id="f" value="female"> <label class="text-headr" >Female</label><br><br>
+  
+ <input type="text" class="login-username" name="username" id="user"  autofocus="true" required="true" placeholder="Username" />
+  <input type="text" class="login-username" name="pass" id="password"  autofocus="true" required="true" placeholder="Password" />
+  <input type="text" class="login-username" name="cpass" id="cpassword"  autofocus="true" required="true" placeholder="Confirm Password" /><p class="text-headr" id="errpass">  </p><br><br>
+ 
+ <input type="date" class="login-username" name="dob" id="date"  min="1890-01-05" max="2005-12-31" value="2020-09-25" autofocus required placeholder="Date Of Birth" />
+ <textarea class="login-username" name="address" id="add" rows="4" cols="50"  autofocus required placeholder="Address"></textarea>
+  <input type="text" class="login-username" name="city" id="cty"  autofocus required placeholder="City" />
+   <input type="text" class="login-username" name="state" id="ste"  autofocus required placeholder="State" />
+    <input type="text" class="login-username"  name="country" id="cntry" autofocus required placeholder="Country" />
+     <input type="text" class="login-username"  name="company" id="cmpy" autofocus required placeholder="Company" />
+	 <input type="file" class="login-username" name="img"  id="image" accept="image/*" autofocus required placeholder="Image">
+	  <input type="text" class="login-username" name="SupportQ" id="SupportQ"  autofocus required placeholder="Support Question" />
+	 <input type="text" class="login-username" name="SupportA" id="SupportA"  autofocus required placeholder="Support Answer" />
+  <input type="submit" name="register" value="Register" class="login-submit" />
+</form>
+
+<div class="underlay-photo1"></div>
+<div class="underlay-black"></div>
+
+
+</body>
+</head>
