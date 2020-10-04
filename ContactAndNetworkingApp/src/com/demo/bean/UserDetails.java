@@ -50,6 +50,10 @@ public class UserDetails {
 		this.supportAns = supportAns;
 	}
 	
+	public UserDetails(String uemail) {
+		this.uEmail=uemail;
+	}
+
 	//Tostring method
 	@Override
 	public String toString() {
