@@ -39,6 +39,21 @@ public class Contact {
 		this.cImage = cimage;
 	}
 	
+	///temp parameterized constructor without image
+	public Contact(String email, String name, String number, String gender, String bdate, String addr, String country,
+			String state, String city, String company) {
+		this.cEmail = email;
+		this.cFullName = name;
+		this.cMob = number;
+		this.cGender = gender;
+		//this.cbDate = bdate;
+		this.cAddress = addr;
+		this.cCity = city;
+		this.cState = state;
+		this.cCountry = country;
+		this.cCompany = company;
+	}
+
 	//Overrided toString method
 	@Override
 	public String toString() {
