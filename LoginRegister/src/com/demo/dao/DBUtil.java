@@ -11,7 +11,7 @@ public class DBUtil {
 			try {
 			DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
 			
-			String url = "jdbc:derby:c:\\data\\mydata\\hsbcdb";
+			String url = "jdbc:derby:c:\\data\\mydata\\hsbcprojdb";
 	        String user = "hsbc";
 	        String password = "hsbc123";
 	        

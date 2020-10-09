@@ -39,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		response.setContentType("text/html");
 
-		String name=request.getParameter("name");
+		String fullname=request.getParameter("fullname");
 		String email=request.getParameter("email");
 		String mob=request.getParameter("mob");
 		String gender=request.getParameter("gender");
@@ -59,17 +59,8 @@ public class RegisterServlet extends HttpServlet {
 		RegisterService registerService=new RegisterServiceImpl();
 
 		Date dt=Date.valueOf(dob);
-		int id = 0;
-		UserDetails userD=registerService.checkUiD(uid);
-		while(userD!=null) {
-			id=userD.getUid();
-			//id=id+1;
-			uid++;
-			userD=registerService.checkUiD(uid);
-		}
-		id=id+1;
 			
-			UserDetails userDetails=new UserDetails(email,name,username,pass,mob,gender,dt,address,city,state,country,company,bImage,id,supportQ,supportA);
+			UserDetails userDetails=new UserDetails(email,username,fullname,pass,mob,gender,dt,address,city,state,country,company,bImage,supportQ,supportA,0,false);
 			registerService.saveDetails(userDetails);
 			request.setAttribute("User Details", userDetails);
 			RequestDispatcher rd=request.getRequestDispatcher("display.jsp");

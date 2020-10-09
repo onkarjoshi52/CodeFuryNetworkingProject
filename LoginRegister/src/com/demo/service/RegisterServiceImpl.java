@@ -13,12 +13,6 @@ public class RegisterServiceImpl implements RegisterService {
 	}
 	 public boolean saveDetails(UserDetails userDetails) {
 		return registerDao.saveDetails(userDetails);
-		 
-		
-	}
-	@Override
-	public UserDetails checkUiD(int uid) {
-		return registerDao.checkUID(uid);
 	}
 
 }

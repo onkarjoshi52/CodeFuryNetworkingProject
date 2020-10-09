@@ -12,6 +12,5 @@ public interface RegisterDao {
 	
 	public Blob convertToBlob(BufferedImage bImage);
 	
-	public UserDetails checkUID(int uid);
 
 }

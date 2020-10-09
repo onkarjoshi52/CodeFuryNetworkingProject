@@ -34,11 +34,9 @@ public class MyLoginServlet extends HttpServlet {
 		UserDetails user=loginService.validateUser(uname,pass);
 		if(user!=null){
 			HttpSession session=request.getSession();
-			session.setAttribute("uname", uname);
-			session.setAttribute("pass", pass);
-			//session.setAttribute("role","user" );
+			session.setAttribute("user details", user);
 		    if(session.isNew()) {
-		    	session.setAttribute("uname", uname);
+		    	session.setAttribute("user details", user);
 		    }			
 			RequestDispatcher rd=request.getRequestDispatcher("welcome.jsp");
 			rd.forward(request, response);

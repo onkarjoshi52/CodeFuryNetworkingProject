@@ -20,12 +20,11 @@ import com.demo.bean.UserDetails;
 public class RegisterDaoImpl implements RegisterDao {
 
 	static Connection conn;
-	static PreparedStatement uregister,ugetid;
+	static PreparedStatement uregister;
 	static {
 		conn=DBUtil.getMyConnection();
 		try {
-			uregister=conn.prepareStatement("insert into userdetails values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			ugetid=conn.prepareStatement("select uid from userdetails where uid=?");
+			uregister=conn.prepareStatement("insert into userdetails values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 		}catch(SQLException e) {
 			
 		}
@@ -47,28 +46,7 @@ public class RegisterDaoImpl implements RegisterDao {
 	      
 		return null;
 	}
-	
-	public UserDetails checkUID(int uid) {
-			ResultSet rs;
-			try {
-				ugetid.setInt(1, uid);
-				rs = ugetid.executeQuery();
-				if(rs.next()) {
-					UserDetails u=new UserDetails(rs.getInt(1));
-					return u;
-				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			return null;
 		
-	}
-	
-
-	
-	
 	
 	public boolean saveDetails(UserDetails userDetails) {
 		
@@ -80,16 +58,17 @@ public class RegisterDaoImpl implements RegisterDao {
 			uregister.setString(4, userDetails.getUpass());
 			uregister.setString(5, userDetails.getUmob());
 			uregister.setString(6, userDetails.getUgender());
-			uregister.setDate(7,userDetails.getUbdate());
+			uregister.setDate(7,(java.sql.Date) userDetails.getUbdate());
 			uregister.setString(8, userDetails.getUaddress());
 			uregister.setString(9, userDetails.getUcity());
 			uregister.setString(10, userDetails.getUstate());
 			uregister.setString(11, userDetails.getUcountry());
 			uregister.setString(12, userDetails.getUcompany());
 			uregister.setBlob(13, blob);
-			uregister.setInt(14, userDetails.getUid());
-			uregister.setString(15, userDetails.getSupportQn());
-			uregister.setString(16, userDetails.getSupportAns());
+			uregister.setString(14, userDetails.getSupportQn());
+			uregister.setString(15, userDetails.getSupportAns());
+			uregister.setInt(16, userDetails.getBlockCount());
+			uregister.setBoolean(17, userDetails.isDisableflag());
 			
 			int rs=uregister.executeUpdate();
 			if(rs!=0) {
