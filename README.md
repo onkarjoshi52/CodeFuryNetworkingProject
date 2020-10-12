@@ -12,7 +12,7 @@ Through this project we are trying to connect people. The web based application 
 ## Brief workflow of the project:
 When we run the project, the first page is the HOMEPAGE. From there you have the option to login as ADMIN or USER. After you login(USER) ,you can access various fetures of application like:
 1. Add Friend by sending request to the other user.
-2. BLOCK,IGNORE,ACCEPT the friend request recieved.
+2. BLOCK,IGNORE,ACCEPT the friend request received.
 3. SEARCH information of other users. 
 4. BLOCK or UNBLOCK other users.
 5. ADD NEW USER 
